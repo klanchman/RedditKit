@@ -136,6 +136,13 @@ typedef NS_ENUM(NSUInteger, RKDistinguishedStatus) {
 @property (nonatomic, assign, readonly) RKDistinguishedStatus distinguishedStatus;
 
 /**
+ Whether the link has been distinguished by a moderator or admin.
+ This will either be set to 'yes', 'no', 'admin', 'special' or nil.
+ More information here: http://www.reddit.com/r/redditdev/comments/19ak1b/api_change_distinguished_is_now_available_in_the/
+ */
+@property (nonatomic, copy, readonly) NSString *distinguished;
+
+/**
  Any replies to the comment. This array contains other RKComment objects.
  */
 @property (nonatomic, strong, readonly) NSArray *replies;
