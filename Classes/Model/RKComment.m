@@ -26,6 +26,8 @@
 
 @implementation RKComment
 
+@dynamic score;
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     NSDictionary *keyPaths = @{
@@ -53,6 +55,8 @@
 		@"submissionParent": @"data.parent", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
         //		@"totalReports": @"data.num_reports",          // not required for now.
         @"distinguished": @"data.distinguished" // not required for now.
+        @"authorFlairClass": @"data.author_flair_css_class",
+        @"authorFlairText": @"data.author_flair_text"
     };
     
     return [[super JSONKeyPathsByPropertyKey] mtl_dictionaryByAddingEntriesFromDictionary:keyPaths];
